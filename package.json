@@ -1,0 +1,38 @@
+{
+  "name": "elevenlabs-m2k",
+  "version": "1.0.0",
+  "description": "The Nodes KS API for ElevenLabs text-to-speech.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/M2KDevelopments/elevenlabs-nodejs.git"
+  },
+  "files": [
+    "/dist"
+  ],
+  "keywords": [
+    "elevenlabs",
+    "tts",
+    "texttospeech",
+    "audio"
+  ],
+  "author": "M2K Developments",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/M2KDevelopments/elevenlabs-nodejs/issues"
+  },
+  "homepage": "https://github.com/M2KDevelopments/elevenlabs-nodejs#readme",
+  "dependencies": {
+    "axios": "^1.5.0",
+    "typescript": "^5.1.6"
+  },
+  "devDependencies": {
+    "@types/node": "^20.5.3"
+  }
+}
