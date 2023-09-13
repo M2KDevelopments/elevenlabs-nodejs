@@ -1,5 +1,5 @@
 # Elevenlabs Nodejs
-The Nodes JS <a href="https://api.elevenlabs.io/docs">API</a> for ElevenLabs text-to-speech.
+The Nodes JS <a href="https://api.elevenlabs.io/docs">API</a> for ElevenLabs text-to-speech. Unleash the power of our cutting-edge technology to generate realistic, captivating speech in a wide range of languages.
 
 ## Getting Started
 ```
@@ -16,12 +16,15 @@ elevenlabs.getVoices().then(async (data) => {
 });
 ```
 
-```
-const data = await elevenlabs.getVoices();
-const { voice_id, name } = data.voices[0];
-console.log(name, 'is speaking', `(${voice_id})`);
-```
 
+## Get Models
+```
+elevenlabs.getModels().then(async (data) => {
+    const { model_id, name } = data.voices[0];
+    console.log(name, '=', `(${model_id})`);
+});
+```
+ 
 
 ## Get Audio
 ```

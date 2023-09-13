@@ -1,6 +1,6 @@
 {
   "name": "elevenlabs-m2k",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "The Nodes KS API for ElevenLabs text-to-speech.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

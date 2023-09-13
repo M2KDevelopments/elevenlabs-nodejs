@@ -27,7 +27,7 @@ export class ElevenlabsAPI {
      */
     async getVoices(): Promise<Array<any>> {
         const url = `${BASE_URL}/voices`;
-        return (await instance.get(url, this.headers)).data;
+        return (await instance.get(url, this.headers)).data.voices;
     }
 
     /**
@@ -42,10 +42,10 @@ export class ElevenlabsAPI {
     /**
      * 
      * @param {*} text The text you want to convert to an audio file
-     * @param {*} voiceID The voice id. You can get voices by called the 'getVoices' function.
+     * @param {*} voiceID The voice id. You can get voices by calling the 'getVoices' function.
      * @param stability 
      * @param similarity_boost 
-     * @param model_id Identifier of the model that will be used, You can get models by called the 'getModels' function.
+     * @param model_id Identifier of the model that will be used, You can get models by calling the 'getModels' function.
      * @returns Audio file
      */
     async getAudio(text: string, voiceID: string, stability: number = 0.5, similarity_boost = 0.75, model_id: string = "eleven_monolingual_v1") {
