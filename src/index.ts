@@ -31,19 +31,31 @@ export class ElevenlabsAPI {
     }
 
     /**
+     * Get all preset voices
+     * @returns A json array of models
+     */
+    async getModels(): Promise<Array<any>> {
+        const url = `${BASE_URL}/models`;
+        return (await instance.get(url, this.headers)).data;
+    }
+
+    /**
      * 
      * @param {*} text The text you want to convert to an audio file
      * @param {*} voiceID The voice id. You can get voices by called the 'getVoices' function.
+     * @param stability 
+     * @param similarity_boost 
+     * @param model_id Identifier of the model that will be used, You can get models by called the 'getModels' function.
      * @returns Audio file
      */
-    async getAudio(text: string, voiceID: string) {
+    async getAudio(text: string, voiceID: string, stability: number = 0.5, similarity_boost = 0.75, model_id: string = "eleven_monolingual_v1") {
         const url = `${BASE_URL}/text-to-speech/${voiceID}`
         const data = {
             "text": text,
-            "model_id": "eleven_monolingual_v1",
+            "model_id": model_id,
             "voice_settings": {
-                "stability": 0.5,
-                "similarity_boost": 0.75
+                "stability": stability,
+                "similarity_boost": similarity_boost
             }
         }
         return (await instance.post(url, data, this.headers)).data;
