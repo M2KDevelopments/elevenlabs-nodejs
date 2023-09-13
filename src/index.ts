@@ -15,7 +15,7 @@ export class ElevenlabsAPI {
     constructor(apiKey: string) {
         this.apiKey = apiKey;
         this.headers = {
-            'accept': 'audio/mpeg',
+            'accept': 'audio/*',
             'xi-api-key': `${apiKey}`,
             'Content-Type': 'application/json'
         }
@@ -27,16 +27,27 @@ export class ElevenlabsAPI {
      */
     async getVoices(): Promise<Array<any>> {
         const url = `${BASE_URL}/voices`;
-        return (await instance.get(url, this.headers)).data.voices;
+        return (await instance.get(url, { headers: this.headers })).data.voices;
     }
 
     /**
      * Get all preset voices
-     * @returns A json array of models
+     * @returns A json array of {name, model_id, ...} and more 
      */
     async getModels(): Promise<Array<any>> {
         const url = `${BASE_URL}/models`;
-        return (await instance.get(url, this.headers)).data;
+        return (await instance.get(url, { headers: this.headers })).data;
+    }
+
+    /**
+     * Get all preset voices
+     * @returns A sample Audio from voice url
+     */
+    async getSample(voice_id: string): Promise<string> {
+        const url = `${BASE_URL}/voices/${voice_id}`;
+        const response = await instance.get(url, { headers: this.headers });
+        const voice = response.data;
+        return voice.preview_url;
     }
 
     /**
@@ -58,6 +69,6 @@ export class ElevenlabsAPI {
                 "similarity_boost": similarity_boost
             }
         }
-        return (await instance.post(url, data, this.headers)).data;
+        return (await instance.post(url, data, { headers: this.headers, responseType: 'arraybuffer', })).data;
     }
 }

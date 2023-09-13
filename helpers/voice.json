@@ -1,0 +1,89 @@
+{
+    "available_for_tiers": [
+      "string"
+    ],
+    "category": "string",
+    "description": "string",
+    "fine_tuning": {
+      "fine_tuning_requested": "boolean",
+      "finetuning_state": "not_started",
+      "is_allowed_to_fine_tune": "boolean",
+      "language": "string",
+      "manual_verification": {
+        "extra_text": "string",
+        "files": [
+          {
+            "file_id": "string",
+            "file_name": "string",
+            "mime_type": "string",
+            "size_bytes": "integer",
+            "upload_date_unix": "integer"
+          }
+        ],
+        "request_time_unix": "integer"
+      },
+      "manual_verification_requested": "boolean",
+      "slice_ids": [
+        "string"
+      ],
+      "verification_attempts": [
+        {
+          "accepted": "boolean",
+          "date_unix": "integer",
+          "levenshtein_distance": "number",
+          "recording": {
+            "mime_type": "string",
+            "recording_id": "string",
+            "size_bytes": "integer",
+            "transcription": "string",
+            "upload_date_unix": "integer"
+          },
+          "similarity": "number",
+          "text": "string"
+        }
+      ],
+      "verification_attempts_count": "integer",
+      "verification_failures": [
+        "string"
+      ]
+    },
+    "high_quality_base_model_ids": [
+      "string"
+    ],
+    "labels": "object",
+    "name": "string",
+    "preview_url": "string",
+    "samples": [
+      {
+        "file_name": "string",
+        "hash": "string",
+        "mime_type": "string",
+        "sample_id": "string",
+        "size_bytes": "integer"
+      }
+    ],
+    "settings": {
+      "similarity_boost": "number",
+      "stability": "number",
+      "style": "0",
+      "use_speaker_boost": true
+    },
+    "sharing": {
+      "cloned_by_count": "integer",
+      "description": "string",
+      "enabled_in_library": "boolean",
+      "history_item_sample_id": "string",
+      "labels": "object",
+      "liked_by_count": "integer",
+      "name": "string",
+      "original_voice_id": "string",
+      "public_owner_id": "string",
+      "review_message": "string",
+      "review_status": "not_requested",
+      "status": "enabled",
+      "whitelisted_emails": [
+        "string"
+      ]
+    },
+    "voice_id": "string"
+  }
