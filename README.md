@@ -1,4 +1,9 @@
 # Elevenlabs Nodejs
+<a href="https://www.buymeacoffee.com/app/m2kdevelopments" target="_blank">
+<img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" >
+</a>
+
+
 The Nodes JS <a href="https://api.elevenlabs.io/docs">API</a> for ElevenLabs text-to-speech. Unleash the power of our cutting-edge technology to generate realistic, captivating speech in a wide range of languages.
 
 ## Getting Started
@@ -18,7 +23,7 @@ elevenlabs.getVoices().then(async (voices) => {
 });
 ```
 
-# Get Sample Voice Audio URL
+## Get Sample Voice Audio URL
 ```
 elevenlabs.getSample(voice_id).then(url => console.log(url));
 ```
