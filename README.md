@@ -6,6 +6,15 @@
 
 The Nodes JS <a href="https://api.elevenlabs.io/docs">API</a> for ElevenLabs text-to-speech. Unleash the power of our cutting-edge technology to generate realistic, captivating speech in a wide range of languages.
 
+## Installation
+```
+npm i elevenlabs-m2k --save
+```
+or 
+```
+yarn add elevenlabs-m2k
+```
+
 ## Getting Started
 Get your ElevenLabs API key from <a href="https://docs.elevenlabs.io/api-reference/quick-start/authentication">here</a>.
 
